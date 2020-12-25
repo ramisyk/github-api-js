@@ -5,6 +5,8 @@ const clearLastUsers = document.getElementById("clear-last-users");
 const lastUsers = document.getElementById("last-users");
 
 const github = new Github(); 
+const ui = new UI();
+
 eventListeners(); 
 function eventListeners() {
     githubForm.addEventListener("submit", getData);
@@ -25,13 +27,14 @@ function getData(e) {
                 console.log("Hata");
             }
             else{
-            console.log(response)
+                //console.log(response);
+                ui.showUserInfo(response.user);
             }
         })
         .catch(err => console.log(err));
             
     }
-
+    ui.clearInput();
     e.preventDefault();
 }
 
