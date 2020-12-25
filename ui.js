@@ -34,11 +34,11 @@ class UI {
                 <hr>
                 <li class="list-group">
                     <li class="list-group-item borderzero">
-                        <img src="images/company.png" width="30px">${user.company}<span id="company">Naber</span>
+                        <img src="images/company.png" width="30px">${user.company}<span id="company"></span>
                         
                     </li>
                     <li class="list-group-item borderzero">
-                        <img src="images/location.png" width="30px">${user.location}<span id = "location">sadasdsad</a>
+                        <img src="images/location.png" width="30px">${user.location}<span id = "location"></a>
                         
                     </li>
                     <li class="list-group-item borderzero">
@@ -87,5 +87,19 @@ class UI {
             </div>
             `
         });
+    }
+    addSearchedUserToUI(username) {
+        let users = Storage.getSearchedUsersFromStorage();
+        
+        if (users.indexOf(username) === -1) {
+            //<!-- <li class="list-group-item"></li> -->
+            
+            const li = document.createElement("li");
+
+            li.className = "list-group-item";
+            li.textContent = username;
+
+            this.lastUsers.appendChild(li);
+        }
     }
 }
