@@ -102,4 +102,10 @@ class UI {
             this.lastUsers.appendChild(li);
         }
     }
+    clearAllSearchedFromUI(){
+        while(this.lastUsers.firstElementChild != null) {
+            console.log(this.lastUsers.firstElementChild);
+            this.lastUsers.removeChild(this.lastUsers.firstElementChild);
+        }
+    }
 }

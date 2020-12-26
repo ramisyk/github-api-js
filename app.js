@@ -43,7 +43,10 @@ function getData(e) {
 }
 
 function clearAllSearched() {
-
+    if(confirm("Emin Misiniz?")) {
+       Storage.clearAllSearchedUsersFromStorage();
+       ui.clearAllSearchedFromUI();
+    }
 }
 
 function getAllSearched() {
